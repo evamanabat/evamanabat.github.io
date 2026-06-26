@@ -1,124 +1,366 @@
-
 /* ===================== NAVBAR ===================== */
 
-.navbar {
+.side-nav {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background: white;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
-    padding: 0.75rem 1.5rem;
-  border-bottom: 1px solid #ddd;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 1000;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
+.side-nav::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 50%;
+  width: 2px;
+  background-color: #d0d0d0;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 
-.navbar a:hover {
-  color: blue;
+.dot {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #777;
+  border-radius: 50%;
+  background-color: white;
+  display: block;
+  transition: 0.2s ease;
 }
 
-:root {
-  --nav-height: 30px;
+.dot:hover,
+.dot.active {
+  background-color: black;
+  border-color: black;
+  transform: scale(1.25);
 }
+
+/* ===================== BODY ===================== */
 
 body {
-  padding-top: var(--nav-height);
+  background-color: #F8F5F0;
+  color: #1F2933;
+  font-family: 'Rubik', sans-serif;
 }
 
-/* ===================== EXPERIENCES ===================== */
-
+h1,
 h2 {
   text-align: center;
 }
 
-.experience-tiles {
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2rem 0 8rem;
+  scroll-snap-align: start;
+}
+
+/* ===================== ABOUT ME ===================== */
+
+#about {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me-tile {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   max-width: 60%;
   margin: 0 auto;
-  width: 100%
-}
-
-.experience-tile {
+  width: 100%;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-    padding: 1.5rem;
+  padding: 1.5rem;
   background-color: #fff;
   overflow: hidden;
   box-sizing: border-box;
+  align-items: center;
 }
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.text h2,
+.text h3 {
+  margin: 0;
+}
+
+.oval-photo {
+  border-radius: 6px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  clip-path: ellipse(35% 50% at 50% 50%);
+  object-fit: cover;
+}
+
+/* ===================== EXPERIENCES TIMELINE ===================== */
+
+.experience-tiles {
+  position: relative;
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.experience-tiles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #e0e0e0;
+  transform: translateX(-50%);
+}
+
+.experience-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  min-height: 320px;
+}
+
+.experience-row::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.experience-row:nth-child(odd) .experience-tile {
+  grid-column: 1 / 2;
+}
+
+.experience-row:nth-child(odd) > .experience-photos {
+  grid-column: 3 / 4;
+}
+
+.experience-row:nth-child(even) .experience-tile {
+  grid-column: 3 / 4;
+  grid-row: 1;
+}
+
+.experience-row:nth-child(even) > .experience-photos {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.experience-tile {
+  width: 100%;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  container-type: inline-size;
+}
+
+.experience-tile:hover {
+  transform: translateY(-3px);
+  border-color: #cfcfcf;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.experience-row.expanded .experience-tile {
+  grid-column: 1 / -1;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.experience-row.expanded .experience-tile:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: #e0e0e0;
+}
+
+.experience-row.expanded::before {
+  z-index: 0;
+}
+
+.experience-details {
+  display: none;
+  margin-top: 1rem;
+}
+
+.experience-row.expanded .experience-details {
+  display: block;
+}
+
+/* ===================== HEADER INFO ===================== */
 
 .experience-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  margin-bottom: 1rem;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 1rem;
 }
 
-.experience-info .left { justify-self: start; }
-.experience-info .right { justify-self: end; }
+.date {
+  grid-column: 1 / -1;
+}
+
+@container (max-width: 450px) {
+  .experience-info {
+    grid-template-columns: 1fr;
+  }
+}
 
 .company-logo {
   height: 3em;
   width: auto;
   object-fit: contain;
-  display: block;
 }
 
+/* ===================== PHOTOS ===================== */
+
 .experience-photos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  position: relative;
   width: 100%;
+  height: 280px;
+  margin-top: 1rem;
   box-sizing: border-box;
-  margin-top: 0.5rem;
 }
 
 .photo {
-  position: relative;
+  position: absolute;
   overflow: hidden;
-  border-radius: 6px;
-  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .photo img {
   width: 100%;
-  max-height: 200px;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.photo:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+/* ===================== EXPANDED PHOTO GRID ===================== */
+
+.experience-row.expanded .experience-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  position: static;
+  width: 100%;
+  height: auto;
+  margin-top: 1.5rem;
+  box-sizing: border-box;
+  align-items: start;
 }
 
-.overlay-caption {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+.experience-row.expanded .photo {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  transform: none !important;
 
-  color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  padding: 0.5rem;
-  font-size: 0.9rem;
-
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: none;
 }
 
-.photo:hover .overlay-caption {
+.experience-row.expanded .photo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+
+  animation: none !important;
+  transform: none !important;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+/* ===================== EXPANDED CAPTIONS ===================== */
+
+.experience-row.expanded .overlay-caption {
+  position: static;
+  inset: auto;
+  width: 100%;
+  background: none;
+  color: #1F2933;
+  display: block;
   opacity: 1;
+  padding: 0.5rem 0.25rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  box-sizing: border-box;
+}
+
+/* ===================== FLOATING EFFECT ONLY WHEN COLLAPSED ===================== */
+
+.experience-row.active-row:not(.expanded) .photo img {
+  animation: floatPhotoImg 1.8s ease-in-out infinite alternate;
+}
+
+.experience-row.active-row:not(.expanded) .photo:nth-child(2) img {
+  animation-delay: 0.2s;
+}
+
+.experience-row.active-row:not(.expanded) .photo:nth-child(3) img {
+  animation-delay: 0.4s;
+}
+
+.experience-row.active-row:not(.expanded) .photo:nth-child(4) img {
+  animation-delay: 0.6s;
+}
+
+.experience-row.active-row:not(.expanded) .photo:nth-child(5) img {
+  animation-delay: 0.8s;
+}
+
+.experience-row.active-row:not(.expanded) .photo:nth-child(6) img {
+  animation-delay: 1s;
+}
+
+@keyframes floatPhotoImg {
+  from {
+    transform: scale(1) rotate(-2deg);
+  }
+
+  to {
+    transform: scale(1.08) rotate(2deg);
+  }
 }
