@@ -10,7 +10,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
-    <script src="script.js"></script>
     <body>
         <header></header>
         <nav class="side-nav">
@@ -23,19 +22,32 @@
 
         <!-- ===================== ABOUT ===================== -->
         <section id="about">
-            <div class="about-me-tile">
-                <div class="info">
-                    <img class="oval-photo" src="images/about-me/aboutme1.jpg" alt="Eva Manabat">
-                    <div class="text">
-                        <h2>Eva Manabat</h2>
-                        <h3>Software Engineer</h3>
+            <div class="about-main">
+                <img class="oval-photo" src="images/about-me/aboutme.jpg" alt="Eva">
+                <div class="text">
+                    <h3>Hi, I'm</h3>
+                    <h1>Eva</h1>
+                    <h2>Software Developer</h2>
+                    <p>
+                        B.S.E. Computer Engineering @ University of Michigan '26
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#experience" class="btn primary-btn">
+                            My Experience
+                        </a>
+                        <a href="#projects" class="btn secondary-btn">
+                            My Projects
+                        </a>
                     </div>
-                    
                 </div>
-                <h4>BSE Computer Engineering, University of Michigan '26</h2>
-                <p>Building and shipping customer-facing software.</p>
-                <p>Full-Stack Development • Embedded Systems • Hardware-Software Integration</p>
             </div>
+            <div class="about-footer">
+                <p>
+                    Full-Stack Development • Embedded Systems •
+                    Hardware-Software Integration
+                </p>
+            </div>
+
         </section>
         <!-- ===================== EXPERIENCE ===================== -->
         <section id="experience">
@@ -46,8 +58,8 @@
                         <div class="experience-info">
                             <div class="date">Fall 2026</div>
                             <h3 class="left">Incoming Software Development Engineer</h3>
-                            <img class="right company-logo" src="images/experience/amazon/amazon-logo.webp" alt="experience">
-                            <div class="left">📍Sunnyvale, CA</div>
+                            <img class="right company-logo" src="images/experience/amazon/amazon-logo-short.png" style="height: 2.5rem">
+                            <div class="left">📍Sunnyvale, CA • Amazon</div>
                         </div>
                         <p>I will be joining Amazon as a Software Development Engineer this coming September!</p>
                     </article>
@@ -83,8 +95,13 @@
                         <div class="experience-info">
                             <div class="date">Summer 2025</div>
                             <h3>Software Development Engineer Intern</h3>
-                            <img class="company-logo" src="images/experience/amazon/amazon-logo.webp">
-                            <div>📍Bellevue, WA</div>
+                            <img class="company-logo" src="images/experience/amazon/amazon-logo-short.png"style="height: 2.5rem">
+                            <div>📍Bellevue, WA • Amazon</div>
+                            <div class="tech-stack">
+                                <div class="tech-pill">Java</div>
+                                <div class="tech-pill">Alexa+</div>
+                                <div class="tech-pill">APIs</div>
+                            </div>
                         </div>
                         <p>Built an Alexa Video feature for Fire TV that improved accessibility and simplified navigation.</p>
                         <div class="experience-details">
@@ -96,7 +113,7 @@
                     <div class="experience-photos">
                         <div class="photo">
                             <img src="images/experience/amazon/amazon1.jpg" alt="Seattle Japanese Garden">
-                            <figcaption>Seattle Japanese Garden</figcaption>
+                            <div class="overlay-caption">Seattle Japanese Garden</div>
                         </div>
                         <div class="photo">
                             <img src="images/experience/amazon/amazon2.jpg" alt="">
@@ -122,11 +139,16 @@
                 </div>
                 <div class="experience-row">
                     <article class="experience-tile">
+                        <img class="company-logo" src="images/experience/nyt/nyt-logo-short.png" style="height: 3rem">
                         <div class="experience-info">
                             <div class="date">Summer 2024</div>
                             <h3>Full-Stack Engineering Intern</h3>
-                            <img class="company-logo" src="images/experience/nyt/nyt-logo.png">
-                            <div>📍New York, NY</div>
+                            <div>📍New York, NY • The New York Times</div>
+                            <div class="tech-stack">
+                                <div class="tech-pill">TypeScript</div>
+                                <div class="tech-pill">React</div>
+                                <div class="tech-pill">Node.js</div>
+                            </div>
                         </div>
                         <p>Developed the Care Subscriber Hub CRM application, which manages customer subscriptions.</p>
                         <div class="experience-details">
@@ -165,12 +187,63 @@
                 <div class="experience-row">
                     <article class="experience-tile">
                         <div class="experience-info">
+                            <div class="date">Fall 2023 - Spring 2024</div>
+                            <h3>Autonomous Flight Systems Lead</h3>
+                            <img class="company-logo" src="images/experience/mfly/mfly-logo-short.png" style="height: 1.75rem">
+                            <div>📍Ann Arbor, MI • M-Fly Aero Design</div>
+                            <div class="tech-stack">
+                                <div class="tech-pill">Python</div>
+                                <div class="tech-pill">ROS 2</div>
+                                <div class="tech-pill">Ardupilot</div>
+                            </div>
+                        </div>
+                        <p>Led a team of 8 developing autonomous waypoint navigation and obstacle avoidance algorithms.</p>
+                        <div class="experience-details">
+                            <p>
+                            I was immersed in the full software development lifecycle and Agile/Scrum practices of a large corporate environment.
+                            </p>
+                        </div>
+                    </article>
+                    <div class="experience-photos">
+                        <div class="photo">
+                            <img src="images/experience/mfly/mfly1.jpg">
+                            <div class="overlay-caption">Calibrating the plane</div>
+                        </div>
+                        <div class="photo">
+                            <img src="images/experience/mfly/mfly2.jpg" alt="">
+                            <div class="overlay-caption">Hard at work or hardly working?</div>
+                        </div>
+                        <div class="photo">
+                            <img src="images/experience/mfly/mfly3.jpg" alt="">
+                            <div class="overlay-caption">Annual SUAS competition</div>
+                        </div>
+                        <div class="photo">
+                            <img src="images/experience/mfly/mfly5.jpg" alt="">
+                            <div class="overlay-caption">Teams from all over the world!</div>
+                        </div>
+                        <div class="photo">
+                            <img src="images/experience/mfly/mfly4.jpg">
+                            <div class="overlay-caption">Constructing airplane wings</div>
+                        </div>
+                        <div class="photo">
+                            <img src="images/experience/mfly/mfly6.PNG" alt="">
+                            <div class="overlay-caption">Programming the payload mechanism</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-row">
+                    <article class="experience-tile">
+                        <div class="experience-info">
                             <div class="date">Summer 2023</div>
                             <h3>Software Intern</h3>
-                            <img class="company-logo" src="images/experience/becare/becare-logo.png" alt="company">
-                            <div>📍New York, NY</div>
+                            <img class="company-logo" src="images/experience/becare/becare-logo-short.png" style="height: 2.5rem">
+                            <div>📍New York, NY • BeCareLink</div>
+                            <div class="tech-stack">
+                                <div class="tech-pill">Python</div>
+                                <div class="tech-pill">Raspberry Pi</div>
+                            </div>
                         </div>
-                        <p>Prototyped a medical device that strobed LEDs at adjustable frequencies, brightnesses, and colors with a Raspberry Pi 4.</p>
+                        <p>Prototyped a medical device that strobed LEDs at adjustable frequencies, brightnesses, and colors.</p>
                         <div class="experience-details">
                             <p>This was my first exposure to healthcare technology.</p>
                         </div>
@@ -184,10 +257,6 @@
                         <img src="images/experience/becare/becare2.jpg">
                             <div class="overlay-caption">Oscilloscope</div>
                         </div>
-                        <div class="photo">
-                            <img src="images/experience/carrot.png">
-                            <div class="overlay-caption">Annual MakerWeek</div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -195,17 +264,74 @@
         <!-- ===================== PROJECTS ===================== -->
         <section id="projects">
             <h2>Projects</h2>
-            <p>Here are some of the projects I've worked on!</p>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <img src="images/projects/maizemart.png" alt="MaizeMart">
+                            <h3>MaizeMart</h3>
+                            <div class="tech-stack">
+                                <span class="tech-pill">Ruby on Rails</span>
+                                <span class="tech-pill">PostgreSQL</span>
+                            </div>
+                            <p>An email-verified marketplace for University of Michigan students</p>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>MaizeMart</h3>
+                            <p>
+                                Built a campus marketplace with email verification, listings,
+                                filters, and messaging to make student buying/selling safer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <img src="images/projects/magicwand.png" alt="Magic Wand">
+                            <h3>Magic Wand</h3>
+                            <div class="tech-stack">
+                                <span class="tech-pill">C</span>
+                                <span class="tech-pill">Embedded Systems</span>
+                            </div>
+                            <p>Gesture-controlled smart home remote using STM32.</p>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Magic Wand</h3>
+                            <p>
+                                Created a gesture-controlled smart home remote using an STM32 microcontroller.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
         <!-- ===================== FOR FUN ===================== -->
         <section id="forfun">
             <h2>For Fun</h2>
-            <p>Things I do for fun!</p>
+            <div class="fun-grid">
+                <img src="images/forfun/art/art-matcha-rat.jpg" alt="">
+                <img src="images/forfun/art/art-friends.JPEG" alt="">
+                <img src="images/forfun/art/art-goku-rat.jpg" alt="">
+                <img src="images/forfun/art/art-carrot.PNG" alt="">
+                <img src="images/forfun/art/art-pineapple-cat.PNG" alt="">
+                <img src="images/forfun/art/art-santa-rat.PNG" alt="">
+                <img src="images/forfun/art/art-balloon-dog.PNG" alt="">
+                <img src="images/forfun/art/art-cat-ride.PNG" alt="">
+                <img src="images/forfun/art/art-umich-squirrels.PNG" alt="">
+                
+            </div>
         </section>
         <!-- ===================== CONTACT ===================== -->
         <section id="contact">
             <h2>Contact</h2>
             <p>Get in touch with me!</p>
         </section>
+        <script src="script.js"></script>
+
     </body>
 </html>

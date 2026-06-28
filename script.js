@@ -1,10 +1,10 @@
 const layouts = [
-  { size: 140, top: 0, left: 40 },
+  { size: 150, top: 5, left: 40 },
   { size: 95, top: 20, left: 5 },
-  { size: 85, top: 55, left: 20 },
-  { size: 100, top: 45, left: 65 },
-  { size: 75, top: 10, left: 75 },
-  { size: 80, top: 70, left: 50 }
+  { size: 130, top: 55, left: 15 },
+  { size: 125, top: 45, left: 70 },
+  { size: 100, top: 0, left: 80 },
+  { size: 95, top: 80, left: 45 }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -110,23 +110,43 @@ function setupExpandableExperienceTiles() {
     }
 
     tile.addEventListener("click", () => {
-      const isExpanded = row.classList.contains("expanded");
+  const isExpanded = row.classList.contains("expanded");
 
-      if (isExpanded) {
-        const openPhotos = details.querySelector(".experience-photos");
+  if (isExpanded) {
+    const openPhotos = details.querySelector(".experience-photos");
 
-        if (openPhotos) {
-          row.appendChild(openPhotos);
-        }
+    if (openPhotos) {
+      row.appendChild(openPhotos);
+    }
 
-        row.classList.remove("expanded");
-      } else {
-        clearPhotoLayouts(photos);
-        details.appendChild(photos);
-        row.classList.add("expanded");
-      }
+    row.classList.remove("expanded");
+  } else {
+    clearPhotoLayouts(photos);
+    details.appendChild(photos);
+    row.classList.add("expanded");
 
-      applyPhotoLayouts();
-    });
+    setTimeout(() => {
+      const rect = row.getBoundingClientRect();
+      const scrollTop =
+        window.pageYOffset +
+        rect.top -
+        (window.innerHeight / 2) +
+        (rect.height / 2);
+
+      window.scrollTo({
+        top: scrollTop,
+        behavior: "smooth"
+      });
+    }, 100);
+  }
+
+  applyPhotoLayouts();
+});
   });
 }
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+  });
+});
