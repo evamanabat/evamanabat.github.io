@@ -9,7 +9,6 @@ const layouts = [
 
 document.addEventListener("DOMContentLoaded", () => {
   applyPhotoLayouts();
-  setupSideNav();
   setupActiveExperienceRows();
   setupExpandableExperienceTiles();
 });
@@ -40,39 +39,6 @@ function clearPhotoLayouts(cluster) {
     photo.style.left = "";
     photo.style.transform = "";
   });
-}
-
-function setupSideNav() {
-  const sections = document.querySelectorAll("section[id]");
-  const dots = document.querySelectorAll(".side-nav .dot");
-
-  dots.forEach((dot) => {
-    dot.addEventListener("click", () => {
-      dots.forEach((d) => d.classList.remove("active"));
-      dot.classList.add("active");
-    });
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        dots.forEach((dot) => dot.classList.remove("active"));
-
-        const activeDot = document.querySelector(
-          `.side-nav .dot[href="#${entry.target.id}"]`
-        );
-
-        if (activeDot) {
-          activeDot.classList.add("active");
-        }
-      });
-    },
-    { threshold: 0.6 }
-  );
-
-  sections.forEach((section) => observer.observe(section));
 }
 
 function setupActiveExperienceRows() {
@@ -150,3 +116,35 @@ document.querySelectorAll(".project-card").forEach((card) => {
     card.classList.toggle("flipped");
   });
 });
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar a");
+
+function setActiveLink(id) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+  });
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const id = link.getAttribute("href").slice(1);
+    setActiveLink(id);
+  });
+});
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveLink(entry.target.id);
+      }
+    });
+  },
+  {
+    rootMargin: "-35% 0px -55% 0px",
+    threshold: 0
+  }
+);
+
+sections.forEach((section) => observer.observe(section));

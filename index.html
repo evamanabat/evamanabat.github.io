@@ -12,17 +12,20 @@
     </head>
     <body>
         <header></header>
-        <nav class="side-nav">
-            <a href="#about" class="dot active" aria-label="About"></a>
-            <a href="#experience" class="dot" aria-label="Experience"></a>
-            <a href="#projects" class="dot" aria-label="Projects"></a>
-            <a href="#forfun" class="dot" aria-label="For Fun"></a>
-            <a href="#contact" class="dot" aria-label="Contact"></a>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#forfun">For Fun</a></li>
+                <li><a href="#contact" class="contact-btn">Contact</a></li>
+            </ul>
         </nav>
 
-        <!-- ===================== ABOUT ===================== -->
-        <section id="about">
-            <div class="about-main">
+        <!-- ===================== HOME ===================== -->
+        <section id="home">
+            <div class="home-main">
                 <img class="oval-photo" src="images/about-me/aboutme.jpg" alt="Eva">
                 <div class="text">
                     <h3>Hi, I'm</h3>
@@ -31,17 +34,17 @@
                     <p>
                         B.S.E. Computer Engineering @ University of Michigan '26
                     </p>
-                    <div class="hero-buttons">
+                    <div class="home-buttons">
                         <a href="#experience" class="btn primary-btn">
                             My Experience
                         </a>
-                        <a href="#projects" class="btn secondary-btn">
-                            My Projects
+                        <a href="#about" class="btn secondary-btn">
+                            About Me →
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="about-footer">
+            <div class="home-footer">
                 <p>
                     Full-Stack Development • Embedded Systems •
                     Hardware-Software Integration
@@ -49,9 +52,15 @@
             </div>
 
         </section>
+        <!-- ===================== ABOUT ===================== -->
+        <section id="about">
+            <h2>About</h2>
+            <p>Content for the About section goes here.</p>
+        </section>
+
         <!-- ===================== EXPERIENCE ===================== -->
         <section id="experience">
-            <h2>Experience</h2>
+            <h2>Where I've Worked</h2>
             <div class="experience-tiles">
                 <div class="experience-row">
                     <article class="experience-tile">
@@ -263,7 +272,7 @@
         </section>
         <!-- ===================== PROJECTS ===================== -->
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>Things I've Built</h2>
 
             <div class="projects-grid">
 
@@ -312,7 +321,7 @@
         </section>
         <!-- ===================== FOR FUN ===================== -->
         <section id="forfun">
-            <h2>For Fun</h2>
+            <h2>When I'm Not Coding</h2>
             <div class="fun-grid">
                 <img src="images/forfun/art/art-matcha-rat.jpg" alt="">
                 <img src="images/forfun/art/art-friends.JPEG" alt="">
