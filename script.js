@@ -1,45 +1,9 @@
-const layouts = [
-  { size: 150, top: 5, left: 40 },
-  { size: 95, top: 20, left: 5 },
-  { size: 130, top: 55, left: 15 },
-  { size: 125, top: 45, left: 70 },
-  { size: 100, top: 0, left: 80 },
-  { size: 95, top: 80, left: 45 }
-];
-
 document.addEventListener("DOMContentLoaded", () => {
-  applyPhotoLayouts();
   setupActiveExperienceRows();
   setupExpandableExperienceTiles();
+  setupProjectCards();
+  setupNavbarActiveLinks();
 });
-
-function applyPhotoLayouts() {
-  document.querySelectorAll(".experience-row:not(.expanded) > .experience-photos").forEach((cluster) => {
-    const photos = cluster.querySelectorAll(".photo");
-
-    photos.forEach((photo, index) => {
-      const layout = layouts[index % layouts.length];
-
-      photo.style.position = "absolute";
-      photo.style.width = `${layout.size}px`;
-      photo.style.height = `${layout.size}px`;
-      photo.style.top = `${layout.top}%`;
-      photo.style.left = `${layout.left}%`;
-      photo.style.transform = "none";
-    });
-  });
-}
-
-function clearPhotoLayouts(cluster) {
-  cluster.querySelectorAll(".photo").forEach((photo) => {
-    photo.style.position = "";
-    photo.style.width = "";
-    photo.style.height = "";
-    photo.style.top = "";
-    photo.style.left = "";
-    photo.style.transform = "";
-  });
-}
 
 function setupActiveExperienceRows() {
   const rows = document.querySelectorAll(".experience-row");
@@ -60,12 +24,12 @@ function setupActiveExperienceRows() {
   window.addEventListener("resize", updateActiveRow);
   updateActiveRow();
 }
+
 function setupExpandableExperienceTiles() {
   document.querySelectorAll(".experience-row").forEach((row) => {
     const tile = row.querySelector(".experience-tile");
-    const photos = row.querySelector(":scope > .experience-photos");
 
-    if (!tile || !photos) return;
+    if (!tile) return;
 
     let details = tile.querySelector(".experience-details");
 
@@ -76,75 +40,82 @@ function setupExpandableExperienceTiles() {
     }
 
     tile.addEventListener("click", () => {
-  const isExpanded = row.classList.contains("expanded");
+      const isExpanded = row.classList.contains("expanded");
 
-  if (isExpanded) {
-    const openPhotos = details.querySelector(".experience-photos");
+      document.querySelectorAll(".experience-row.expanded").forEach((openRow) => {
+        if (openRow === row) return;
 
-    if (openPhotos) {
-      row.appendChild(openPhotos);
-    }
+        const openTile = openRow.querySelector(".experience-tile");
+        const openDetails = openTile?.querySelector(".experience-details");
+        const openPhotos = openDetails?.querySelector(".experience-photos");
 
-    row.classList.remove("expanded");
-  } else {
-    clearPhotoLayouts(photos);
-    details.appendChild(photos);
-    row.classList.add("expanded");
+        if (openPhotos) {
+          openRow.appendChild(openPhotos);
+        }
 
-    setTimeout(() => {
-      const rect = row.getBoundingClientRect();
-      const scrollTop =
-        window.pageYOffset +
-        rect.top -
-        (window.innerHeight / 2) +
-        (rect.height / 2);
-
-      window.scrollTo({
-        top: scrollTop,
-        behavior: "smooth"
+        openRow.classList.remove("expanded");
       });
-    }, 100);
-  }
 
-  applyPhotoLayouts();
-});
-  });
-}
+      const photos =
+        row.querySelector(":scope > .experience-photos") ||
+        details.querySelector(".experience-photos");
 
-document.querySelectorAll(".project-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("flipped");
-  });
-});
+      if (!photos) return;
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar a");
+      if (isExpanded) {
+        row.appendChild(photos);
+        row.classList.remove("expanded");
+      } else {
+        details.appendChild(photos);
+        row.classList.add("expanded");
 
-function setActiveLink(id) {
-  navLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-  });
-}
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    const id = link.getAttribute("href").slice(1);
-    setActiveLink(id);
-  });
-});
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActiveLink(entry.target.id);
+        row.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
       }
     });
-  },
-  {
-    rootMargin: "-35% 0px -55% 0px",
-    threshold: 0
-  }
-);
+  });
+}
 
-sections.forEach((section) => observer.observe(section));
+function setupProjectCards() {
+  document.querySelectorAll(".project-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("flipped");
+    });
+  });
+}
+
+function setupNavbarActiveLinks() {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  function setActiveLink(id) {
+    navLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+    });
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const id = link.getAttribute("href").slice(1);
+      setActiveLink(id);
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: "-35% 0px -55% 0px",
+      threshold: 0
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}

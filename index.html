@@ -13,8 +13,8 @@
     <body>
         <header></header>
         <nav class="navbar">
+            <a href="#home" class="logo">Eva Manabat</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -26,7 +26,7 @@
         <!-- ===================== HOME ===================== -->
         <section id="home">
             <div class="home-main">
-                <img class="oval-photo" src="images/about-me/aboutme.jpg" alt="Eva">
+                <img class="oval-photo" src="images/home/home.jpg" alt="Eva">
                 <div class="text">
                     <h3>Hi, I'm</h3>
                     <h1>Eva</h1>
@@ -50,12 +50,33 @@
                     Hardware-Software Integration
                 </p>
             </div>
-
         </section>
         <!-- ===================== ABOUT ===================== -->
         <section id="about">
-            <h2>About</h2>
-            <p>Content for the About section goes here.</p>
+            <h2>About Me</h2>
+            <div class="about-main">
+                <img class="about-photo top-photo"
+                    src="images/about-me/about-me-grad.jpg"
+                    alt="Eva">
+                <div class="about-text">
+                    <p>My name is Eva Manabat, and I recently graduated from the University of Michigan with a B.S.E. in Computer Engineering. Go Blue!</p>
+                    <p>
+                        I'm passionate about building customer-facing software that people use every day, especially products that make technology more intuitive, accessible, and enjoyable.
+                        From robotics to autonomous flight systems to consumer software, my experiences have reinforced my passion for turning ideas into products that people can actually use. I love working with people who bring different perspectives, because the best ideas come from building together.
+                    </p>
+                    <p>
+                        I was born and raised in New York City, and I love exploring new places and trying new foods.
+                        Outside of coding, you'll usually find me drawing, taking long walks, enjoying a picnic by the river,
+                        or playing video games.  Check out some of my <a href="#forfun">artwork</a>.
+                    </p>
+                </div>
+            </div>     
+            <div class="scroll-next">
+    <a href="#experience">
+        <span>Explore my experience</span>
+        <span class="arrow">↓</span>
+    </a>
+</div>  
         </section>
 
         <!-- ===================== EXPERIENCE ===================== -->
@@ -73,30 +94,10 @@
                         <p>I will be joining Amazon as a Software Development Engineer this coming September!</p>
                     </article>
                     <div class="experience-photos">
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon1.jpg">
-                            <div class="overlay-caption">Seattle Japanese Garden</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon2.jpg" alt="">
-                            <div class="overlay-caption">At work!</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon3.jpg" alt="">
-                            <div class="overlay-caption">Lake Washington</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon4.jpg">
-                            <div class="overlay-caption">Views from Mt. Rainier</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon5.jpg" alt="">
-                            <div class="overlay-caption">Soccer game at Lumen Field!</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon6.jpg" alt="">
-                            <div class="overlay-caption">Mt. Rainier</div>
-                        </div>
+                         <div class="photo">
+                            <img src="images/experience/amazon/amazon-sunnyvale/amazon-sunnyvale-sf.png">
+                            <div class="overlay-caption">San Francisco</div>
+                         </div>
                     </div>
                 </div>
                 <div class="experience-row">
@@ -120,28 +121,24 @@
                         </div>
                     </article>
                     <div class="experience-photos">
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon1.jpg" alt="Seattle Japanese Garden">
-                            <div class="overlay-caption">Seattle Japanese Garden</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon2.jpg" alt="">
-                            <div class="overlay-caption">At work!</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon3.jpg" alt="">
-                            <div class="overlay-caption">Lake Washington</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/amazon/amazon4.jpg" alt="">
+                         <div class="photo">
+                            <img src="images/experience/amazon/amazon-bellevue/amazon-bellevue4.jpg">
                             <div class="overlay-caption">Views from Mt. Rainier</div>
                         </div>
                         <div class="photo">
-                            <img src="images/experience/amazon/amazon5.jpg" alt="">
+                            <img src="images/experience/amazon/amazon-bellevue/amazon-bellevue1.jpg" alt="Seattle Japanese Garden">
+                            <div class="overlay-caption">Seattle Japanese Garden</div>
+                        </div>
+                        <div class="photo">
+                            <img src="images/experience/amazon/amazon-bellevue/amazon-bellevue3.jpg" alt="">
+                            <div class="overlay-caption">Lake Washington</div>
+                        </div>
+                        <div class="photo">
+                            <img src="images/experience/amazon/amazon-bellevue/amazon-bellevue5.jpg" alt="">
                             <div class="overlay-caption">Soccer game at Lumen Field!</div>
                         </div>
                         <div class="photo">
-                            <img src="images/experience/amazon/amazon6.jpg" alt="">
+                            <img src="images/experience/amazon/amazon-bellevue/amazon-bellevue6.jpg" alt="">
                             <div class="overlay-caption">Mt. Rainier</div>
                         </div>
                     </div>
@@ -187,10 +184,6 @@
                             <img src="images/experience/nyt/nyt5.jpg" alt="">
                             <div class="overlay-caption">Nowhere like home :)</div>
                         </div>
-                        <div class="photo">
-                            <img src="images/experience/nyt/nyt6.jpg" alt="">
-                            <div class="overlay-caption">Catching up on the news</div>
-                        </div>
                     </div>
                 </div>
                 <div class="experience-row">
@@ -209,11 +202,17 @@
                         <p>Led a team of 8 developing autonomous waypoint navigation and obstacle avoidance algorithms.</p>
                         <div class="experience-details">
                             <p>
-                            I was immersed in the full software development lifecycle and Agile/Scrum practices of a large corporate environment.
+                                As Flight Systems Lead for M-Fly, the University of Michigan's student-led aerospace design team, I led the development of the autonomous flight software for the MAT-5 aircraft.
+                                Our team competed with the MAT-5 at the SUAS competition in Maryland in June 2024.
+								Read about my experience <a href="https://ece.engin.umich.edu/stories/m-fly-competes-in-autonomous-aerial-competition-for-the-first-time-led-by-eecs-students/" target="_blank">here</a>.
                             </p>
                         </div>
                     </article>
                     <div class="experience-photos">
+                        <div class="photo">
+                            <img src="images/experience/mfly/mfly5.jpg" alt="">
+                            <div class="overlay-caption">Teams from all over the world!</div>
+                        </div>                        
                         <div class="photo">
                             <img src="images/experience/mfly/mfly1.jpg">
                             <div class="overlay-caption">Calibrating the plane</div>
@@ -227,16 +226,8 @@
                             <div class="overlay-caption">Annual SUAS competition</div>
                         </div>
                         <div class="photo">
-                            <img src="images/experience/mfly/mfly5.jpg" alt="">
-                            <div class="overlay-caption">Teams from all over the world!</div>
-                        </div>
-                        <div class="photo">
                             <img src="images/experience/mfly/mfly4.jpg">
                             <div class="overlay-caption">Constructing airplane wings</div>
-                        </div>
-                        <div class="photo">
-                            <img src="images/experience/mfly/mfly6.PNG" alt="">
-                            <div class="overlay-caption">Programming the payload mechanism</div>
                         </div>
                     </div>
                 </div>
@@ -277,44 +268,45 @@
             <div class="projects-grid">
 
                 <div class="project-card">
-                    <div class="project-card-inner">
-                        <div class="project-card-front">
-                            <img src="images/projects/maizemart.png" alt="MaizeMart">
-                            <h3>MaizeMart</h3>
-                            <div class="tech-stack">
-                                <span class="tech-pill">Ruby on Rails</span>
-                                <span class="tech-pill">PostgreSQL</span>
-                            </div>
-                            <p>An email-verified marketplace for University of Michigan students</p>
-                        </div>
-                        <div class="project-card-back">
-                            <h3>MaizeMart</h3>
-                            <p>
-                                Built a campus marketplace with email verification, listings,
-                                filters, and messaging to make student buying/selling safer.
-                            </p>
-                        </div>
+                    <img src="images/projects/maizemart.png" alt="Magic Wand">
+                    <h3>MaizeMart</h3>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Ruby on Rails</span>
+                        <span class="tech-pill">PostgreSQL</span>
                     </div>
+                    <p class="summary">An email-verified marketplace for University of Michigan students.</p>
+                    <p class="extra">
+                        Built a campus marketplace with email verification, listings,
+                        filters, and messaging to make student buying/selling safer.
+                    </p>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-card-inner">
-                        <div class="project-card-front">
-                            <img src="images/projects/magicwand.png" alt="Magic Wand">
-                            <h3>Magic Wand</h3>
-                            <div class="tech-stack">
-                                <span class="tech-pill">C</span>
-                                <span class="tech-pill">Embedded Systems</span>
-                            </div>
-                            <p>Gesture-controlled smart home remote using STM32.</p>
-                        </div>
-                        <div class="project-card-back">
-                            <h3>Magic Wand</h3>
-                            <p>
-                                Created a gesture-controlled smart home remote using an STM32 microcontroller.
-                            </p>
-                        </div>
+                    <img src="images/projects/magicwand.png" alt="Magic Wand">
+                    <h3>Magic Wand</h3>
+                    <div class="tech-stack">
+                        <span class="tech-pill">C</span>
+                        <span class="tech-pill">Embedded Systems</span>
                     </div>
+                    <p class="summary">Gesture-controlled Magic Wand.</p>
+                    <p class="extra">
+                        I built an interactive magic wand controller for my embedded systems class that controlled various household
+						objects through IR transmission. My team of three earned 3rd best demo at our class exposition!
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/projects/fpga.PNG" alt="Magic Wand">
+                    <h3>Traffic Light Controller Finite State Machine</h3>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Verilog</span>
+                        <span class="tech-pill">FPGA</span>
+                    </div>
+                    <p class="summary">FPGA Traffic Light Control System</p>
+                    <p class="extra">
+                        Implemented a traffic light control system in Verilog to simulate a four-way
+                        intersection as a finite state machine, and deployed it to an Intel Cyclone FPGA for my Logic Design class.
+                    </p>
                 </div>
 
             </div>
@@ -322,16 +314,17 @@
         <!-- ===================== FOR FUN ===================== -->
         <section id="forfun">
             <h2>When I'm Not Coding</h2>
+            <p>I like to draw cute cartoons on my iPad!</p>
             <div class="fun-grid">
-                <img src="images/forfun/art/art-matcha-rat.jpg" alt="">
-                <img src="images/forfun/art/art-friends.JPEG" alt="">
-                <img src="images/forfun/art/art-goku-rat.jpg" alt="">
-                <img src="images/forfun/art/art-carrot.PNG" alt="">
-                <img src="images/forfun/art/art-pineapple-cat.PNG" alt="">
-                <img src="images/forfun/art/art-santa-rat.PNG" alt="">
-                <img src="images/forfun/art/art-balloon-dog.PNG" alt="">
-                <img src="images/forfun/art/art-cat-ride.PNG" alt="">
-                <img src="images/forfun/art/art-umich-squirrels.PNG" alt="">
+                <img src="images/for-fun/art/art-matcha-rat.jpg" alt="Matcha Rat">
+                <img src="images/for-fun/art/art-friends.JPEG" alt="Friends">
+                <img src="images/for-fun/art/art-goku-rat.jpg" alt="Goku Rat">
+                <img src="images/for-fun/art/art-carrot.PNG" alt="Carrot">
+                <img src="images/for-fun/art/art-pineapple-cat.PNG" alt="Pineapple Cat">
+                <img src="images/for-fun/art/art-santa-rat.PNG" alt="Santa Rat">
+                <img src="images/for-fun/art/art-balloon-dog.PNG" alt="Balloon Dog">
+                <img src="images/for-fun/art/art-cat-ride.PNG" alt="Cat Ride">
+                <img src="images/for-fun/art/art-umich-squirrels.PNG" alt="UMich Squirrels">
                 
             </div>
         </section>
