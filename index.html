@@ -53,42 +53,49 @@
         </section>
         <!-- ===================== ABOUT ===================== -->
         <section id="about">
-            <h2>About Me</h2>
             <div class="about-main">
                 <img class="about-photo top-photo"
                     src="images/about-me/about-me-grad.jpg"
                     alt="Eva">
                 <div class="about-text">
-                    <p>My name is Eva Manabat, and I recently graduated from the University of Michigan with a B.S.E. in Computer Engineering. Go Blue!</p>
-                    <p>
-                        I'm passionate about building customer-facing software that people use every day, especially products that make technology more intuitive, accessible, and enjoyable.
-                        From robotics to autonomous flight systems to consumer software, my experiences have reinforced my passion for turning ideas into products that people can actually use. I love working with people who bring different perspectives, because the best ideas come from building together.
+                    <p class="about-kicker">Software Developer · University of Michigan</p>
+                    <p class="about-intro">
+                        My name is <span>Eva Manabat</span>, and I recently graduated from the University of Michigan with a B.S.E. in Computer Engineering. Go Blue!
                     </p>
-                    <p>
-                        I was born and raised in New York City, and I love exploring new places and trying new foods.
-                        Outside of coding, you'll usually find me drawing, taking long walks, enjoying a picnic by the river,
-                        or playing video games.  Check out some of my <a href="#forfun">artwork</a>.
+                    <div class="about-copy">
+                        <p>
+                            I'm passionate about building customer-facing software that people use every day, especially products that make technology more intuitive, accessible, and enjoyable.
+                        </p>
+                        <p>
+                            From robotics to autonomous flight systems to consumer software, my experiences have reinforced my passion for turning ideas into products that people can actually use. I love working with people who bring different perspectives, because the best ideas come from building together.
+                        </p>
+                    </div>
+                    <p class="about-life">
+                        I was born and raised in New York City, and I love exploring new places and trying new foods. Outside of coding, you'll usually find me drawing, taking long walks, enjoying a picnic by the river, or playing video games.
                     </p>
+                    <a class="about-art-link" href="#forfun">See some of my artwork</a>
                 </div>
-            </div>     
+            </div>
             <div class="scroll-next">
-    <a href="#experience">
-        <span>Explore my experience</span>
-        <span class="arrow">↓</span>
-    </a>
-</div>  
+                <a href="#experience">
+                    <span>Explore my experience</span>
+                    <span class="arrow">↓</span>
+                </a>
+            </div>
         </section>
 
         <!-- ===================== EXPERIENCE ===================== -->
         <section id="experience">
             <h2>Where I've Worked</h2>
             <div class="experience-tiles">
-                <div class="experience-row">
+                <!-- <div class="experience-row">
                     <article class="experience-tile">
                         <div class="experience-info">
                             <div class="date">Fall 2026</div>
                             <h3 class="left">Incoming Software Development Engineer</h3>
-                            <img class="right company-logo" src="images/experience/amazon/amazon-logo-short.png" style="height: 2.5rem">
+                            <span class="company-badge">
+                                <img class="right company-logo" src="images/experience/amazon/amazon-logo-short.png" style="height: 2.5rem">
+                            </span>
                             <div class="left">📍Sunnyvale, CA • Amazon</div>
                         </div>
                         <p>I will be joining Amazon as a Software Development Engineer this coming September!</p>
@@ -99,13 +106,15 @@
                             <div class="overlay-caption">San Francisco</div>
                          </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="experience-row">
                     <article class="experience-tile">
                         <div class="experience-info">
                             <div class="date">Summer 2025</div>
                             <h3>Software Development Engineer Intern</h3>
-                            <img class="company-logo" src="images/experience/amazon/amazon-logo-short.png"style="height: 2.5rem">
+                            <span class="company-badge">
+                                <img class="company-logo" src="images/experience/amazon/amazon-logo-short.png" style="height: 2.5rem">
+                            </span>
                             <div>📍Bellevue, WA • Amazon</div>
                             <div class="tech-stack">
                                 <div class="tech-pill">Java</div>
@@ -145,7 +154,9 @@
                 </div>
                 <div class="experience-row">
                     <article class="experience-tile">
-                        <img class="company-logo" src="images/experience/nyt/nyt-logo-short.png" style="height: 3rem">
+                        <span class="company-badge">
+                            <img class="company-logo" src="images/experience/nyt/nyt-logo-short.png" style="height: 3rem">
+                        </span>
                         <div class="experience-info">
                             <div class="date">Summer 2024</div>
                             <h3>Full-Stack Engineering Intern</h3>
@@ -191,7 +202,9 @@
                         <div class="experience-info">
                             <div class="date">Fall 2023 - Spring 2024</div>
                             <h3>Autonomous Flight Systems Lead</h3>
-                            <img class="company-logo" src="images/experience/mfly/mfly-logo-short.png" style="height: 1.75rem">
+                            <span class="company-badge">
+                                <img class="company-logo" src="images/experience/mfly/mfly-logo-short.png" style="height: 1.75rem">
+                            </span>
                             <div>📍Ann Arbor, MI • M-Fly Aero Design</div>
                             <div class="tech-stack">
                                 <div class="tech-pill">Python</div>
@@ -236,7 +249,9 @@
                         <div class="experience-info">
                             <div class="date">Summer 2023</div>
                             <h3>Software Intern</h3>
-                            <img class="company-logo" src="images/experience/becare/becare-logo-short.png" style="height: 2.5rem">
+                            <span class="company-badge">
+                                <img class="company-logo" src="images/experience/becare/becare-logo-short.png" style="height: 2.5rem">
+                            </span>
                             <div>📍New York, NY • BeCareLink</div>
                             <div class="tech-stack">
                                 <div class="tech-pill">Python</div>
@@ -263,51 +278,95 @@
         </section>
         <!-- ===================== PROJECTS ===================== -->
         <section id="projects">
-            <h2>Things I've Built</h2>
+            <div class="projects-header">
+                <h2>Things I've Built</h2>
+                <p>
+                    A mix of full-stack product work, embedded systems, and hardware-focused projects where I got to turn ideas into working demos.
+                </p>
+            </div>
 
             <div class="projects-grid">
 
-                <div class="project-card">
-                    <img src="images/projects/maizemart.png" alt="Magic Wand">
-                    <h3>MaizeMart</h3>
-                    <div class="tech-stack">
-                        <span class="tech-pill">Ruby on Rails</span>
-                        <span class="tech-pill">PostgreSQL</span>
+                <article class="project-card" tabindex="0" role="button" aria-expanded="false">
+                    <div class="project-image">
+                        <img src="images/projects/maizemart.png" alt="MaizeMart marketplace interface">
                     </div>
-                    <p class="summary">An email-verified marketplace for University of Michigan students.</p>
-                    <p class="extra">
-                        Built a campus marketplace with email verification, listings,
-                        filters, and messaging to make student buying/selling safer.
-                    </p>
-                </div>
+                    <div class="project-content">
+                        <div class="project-topline">
+                            <span class="project-type">Full-stack web app</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3>MaizeMart</h3>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Ruby on Rails</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                            <span class="tech-pill">Auth</span>
+                        </div>
+                        <p class="summary">An email-verified marketplace for University of Michigan students.</p>
+                        <ul class="project-highlights">
+                            <li>Student-only account verification</li>
+                            <li>Search, filters, listings, and messaging</li>
+                        </ul>
+                        <p class="extra">
+                            Built a campus marketplace with email verification, listings,
+                            filters, and messaging to make student buying/selling safer.
+                        </p>
+                    </div>
+                </article>
 
-                <div class="project-card">
-                    <img src="images/projects/magicwand.png" alt="Magic Wand">
-                    <h3>Magic Wand</h3>
-                    <div class="tech-stack">
-                        <span class="tech-pill">C</span>
-                        <span class="tech-pill">Embedded Systems</span>
+                <article class="project-card" tabindex="0" role="button" aria-expanded="false">
+                    <div class="project-image">
+                        <img src="images/projects/magicwand.png" alt="Gesture-controlled magic wand prototype">
                     </div>
-                    <p class="summary">Gesture-controlled Magic Wand.</p>
-                    <p class="extra">
-                        I built an interactive magic wand controller for my embedded systems class that controlled various household
-						objects through IR transmission. My team of three earned 3rd best demo at our class exposition!
-                    </p>
-                </div>
+                    <div class="project-content">
+                        <div class="project-topline">
+                            <span class="project-type">Embedded systems</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <h3>Magic Wand</h3>
+                        <div class="tech-stack">
+                            <span class="tech-pill">C</span>
+                            <span class="tech-pill">IR</span>
+                            <span class="tech-pill">Sensors</span>
+                        </div>
+                        <p class="summary">A gesture-controlled wand that operated household devices through IR transmission.</p>
+                        <ul class="project-highlights">
+                            <li>Mapped motion gestures to commands</li>
+                            <li>Earned 3rd best demo at exposition</li>
+                        </ul>
+                        <p class="extra">
+                            I built an interactive magic wand controller for my embedded systems class that controlled various household
+                            objects through IR transmission. My team of three earned 3rd best demo at our class exposition.
+                        </p>
+                    </div>
+                </article>
 
-                <div class="project-card">
-                    <img src="images/projects/fpga.PNG" alt="Magic Wand">
-                    <h3>Traffic Light Controller Finite State Machine</h3>
-                    <div class="tech-stack">
-                        <span class="tech-pill">Verilog</span>
-                        <span class="tech-pill">FPGA</span>
+                <article class="project-card" tabindex="0" role="button" aria-expanded="false">
+                    <div class="project-image">
+                        <img src="images/projects/fpga.PNG" alt="FPGA traffic light controller demo">
                     </div>
-                    <p class="summary">FPGA Traffic Light Control System</p>
-                    <p class="extra">
-                        Implemented a traffic light control system in Verilog to simulate a four-way
-                        intersection as a finite state machine, and deployed it to an Intel Cyclone FPGA for my Logic Design class.
-                    </p>
-                </div>
+                    <div class="project-content">
+                        <div class="project-topline">
+                            <span class="project-type">Digital logic</span>
+                            <span class="project-year">2023</span>
+                        </div>
+                        <h3>Traffic Light Controller</h3>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Verilog</span>
+                            <span class="tech-pill">FSM</span>
+                            <span class="tech-pill">FPGA</span>
+                        </div>
+                        <p class="summary">A finite state machine for a four-way intersection deployed on an Intel Cyclone FPGA.</p>
+                        <ul class="project-highlights">
+                            <li>Modeled timing and state transitions</li>
+                            <li>Validated behavior on physical hardware</li>
+                        </ul>
+                        <p class="extra">
+                            Implemented a traffic light control system in Verilog to simulate a four-way
+                            intersection as a finite state machine, and deployed it to an Intel Cyclone FPGA for my Logic Design class.
+                        </p>
+                    </div>
+                </article>
 
             </div>
         </section>
@@ -332,6 +391,20 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>Get in touch with me!</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/evamanabat/" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.38 4.27 5.46v6.28ZM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.54V9H7.1v11.45Z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:manabate@umich.edu" class="contact-link" aria-label="Email">
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M4 5h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2Zm8 7.42L4.6 7H4v.74l8 5.86 8-5.86V7h-.6L12 12.42ZM4 17h16V9.98l-8 5.86-8-5.86V17Z"/>
+                    </svg>
+                    <span>Email</span>
+                </a>
+            </div>
         </section>
         <script src="script.js"></script>
 

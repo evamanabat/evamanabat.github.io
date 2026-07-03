@@ -80,8 +80,18 @@ function setupExpandableExperienceTiles() {
 
 function setupProjectCards() {
   document.querySelectorAll(".project-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("flipped");
+    function toggleCard() {
+      const isExpanded = card.classList.toggle("flipped");
+      card.setAttribute("aria-expanded", String(isExpanded));
+    }
+
+    card.addEventListener("click", toggleCard);
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+
+      event.preventDefault();
+      toggleCard();
     });
   });
 }
