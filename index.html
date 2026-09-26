@@ -26,7 +26,9 @@
         <!-- ===================== HOME ===================== -->
         <section id="home">
             <div class="home-main">
-                <img class="oval-photo" src="images/home/home.jpg" alt="Eva">
+                <div class="oval-photo-wrap">
+                    <img class="oval-photo" src="images/home/home.jpg" alt="Eva">
+                </div>
                 <div class="text">
                     <h3>Hi, I'm</h3>
                     <h1>Eva</h1>
@@ -54,32 +56,32 @@
         <!-- ===================== ABOUT ===================== -->
         <section id="about">
             <div class="about-main">
-                <img class="about-photo top-photo"
-                    src="images/about-me/about-me-grad.jpg"
-                    alt="Eva">
+                <div class="about-photo-wrap">
+                    <img class="about-photo top-photo"
+                        src="images/about-me/about-me-thinker.JPG"
+                        alt="Eva">
+                </div>
                 <div class="about-text">
-                    <p class="about-kicker">Software Developer · University of Michigan</p>
                     <p class="about-intro">
-                        My name is <span>Eva Manabat</span>, and I recently graduated from the University of Michigan with a B.S.E. in Computer Engineering. Go Blue!
+                        Building for everyday life.
                     </p>
                     <div class="about-copy">
                         <p>
-                            I'm passionate about building customer-facing software that people use every day, especially products that make technology more intuitive, accessible, and enjoyable.
+                            I’m passionate about creating customer-facing software that makes technology more intuitive, accessible, and enjoyable.
                         </p>
                         <p>
-                            From robotics to autonomous flight systems to consumer software, my experiences have reinforced my passion for turning ideas into products that people can actually use. I love working with people who bring different perspectives, because the best ideas come from building together.
+                            From robotics and autonomous systems to consumer software, my experiences have taught me that the best products start with the people using them. I love turning ideas into something useful and collaborating with people who bring different perspectives.
                         </p>
                     </div>
                     <p class="about-life">
-                        I was born and raised in New York City, and I love exploring new places and trying new foods. Outside of coding, you'll usually find me drawing, taking long walks, enjoying a picnic by the river, or playing video games.
+                        I was born and raised in New York City, and I love exploring new places and trying new foods. I also enjoy drawing, taking long walks, enjoying a picnic by the river, or playing video games.
                     </p>
-                    <a class="about-art-link" href="#forfun">See some of my artwork</a>
                 </div>
             </div>
             <div class="scroll-next">
                 <a href="#experience">
                     <span>Explore my experience</span>
-                    <span class="arrow">↓</span>
+                    <span class="arrow" aria-hidden="true"></span>
                 </a>
             </div>
         </section>
@@ -115,11 +117,14 @@
                             <span class="company-badge">
                                 <img class="company-logo" src="images/experience/amazon/amazon-logo-short.png" style="height: 2.5rem">
                             </span>
-                            <div>📍Bellevue, WA • Amazon</div>
-                            <div class="tech-stack">
-                                <div class="tech-pill">Java</div>
-                                <div class="tech-pill">Alexa+</div>
-                                <div class="tech-pill">APIs</div>
+                            <div class="experience-company">Amazon</div>
+                            <div class="experience-meta-row">
+                                <div class="tech-stack">
+                                    <div class="tech-pill">Java</div>
+                                    <div class="tech-pill">Alexa+</div>
+                                    <div class="tech-pill">APIs</div>
+                                </div>
+                                <div class="experience-location">📍Bellevue, WA</div>
                             </div>
                         </div>
                         <p>Built an Alexa Video feature for Fire TV that improved accessibility and simplified navigation.</p>
@@ -160,11 +165,14 @@
                         <div class="experience-info">
                             <div class="date">Summer 2024</div>
                             <h3>Full-Stack Engineering Intern</h3>
-                            <div>📍New York, NY • The New York Times</div>
-                            <div class="tech-stack">
-                                <div class="tech-pill">TypeScript</div>
-                                <div class="tech-pill">React</div>
-                                <div class="tech-pill">Node.js</div>
+                            <div class="experience-company">The New York Times</div>
+                            <div class="experience-meta-row">
+                                <div class="tech-stack">
+                                    <div class="tech-pill">TypeScript</div>
+                                    <div class="tech-pill">React</div>
+                                    <div class="tech-pill">Node.js</div>
+                                </div>
+                                <div class="experience-location">📍New York, NY</div>
                             </div>
                         </div>
                         <p>Developed the Care Subscriber Hub CRM application, which manages customer subscriptions.</p>
@@ -205,11 +213,14 @@
                             <span class="company-badge">
                                 <img class="company-logo" src="images/experience/mfly/mfly-logo-short.png" style="height: 1.75rem">
                             </span>
-                            <div>📍Ann Arbor, MI • M-Fly Aero Design</div>
-                            <div class="tech-stack">
-                                <div class="tech-pill">Python</div>
-                                <div class="tech-pill">ROS 2</div>
-                                <div class="tech-pill">Ardupilot</div>
+                            <div class="experience-company">M-Fly Aero Design</div>
+                            <div class="experience-meta-row">
+                                <div class="tech-stack">
+                                    <div class="tech-pill">Python</div>
+                                    <div class="tech-pill">ROS 2</div>
+                                    <div class="tech-pill">Ardupilot</div>
+                                </div>
+                                <div class="experience-location">📍Ann Arbor, MI</div>
                             </div>
                         </div>
                         <p>Led a team of 8 developing autonomous waypoint navigation and obstacle avoidance algorithms.</p>
@@ -223,7 +234,7 @@
                     </article>
                     <div class="experience-photos">
                         <div class="photo">
-                            <img src="images/experience/mfly/mfly_flags.jpg" alt="">
+                            <img src="images/experience/mfly/mfly-flags.jpg" alt="">
                             <div class="overlay-caption">Teams from all over the world!</div>
                         </div>                        
                         <div class="photo">
@@ -252,10 +263,13 @@
                             <span class="company-badge">
                                 <img class="company-logo" src="images/experience/becare/becare-logo-short.png" style="height: 2.5rem">
                             </span>
-                            <div>📍New York, NY • BeCareLink</div>
-                            <div class="tech-stack">
-                                <div class="tech-pill">Python</div>
-                                <div class="tech-pill">Raspberry Pi</div>
+                            <div class="experience-company">BeCareLink</div>
+                            <div class="experience-meta-row">
+                                <div class="tech-stack">
+                                    <div class="tech-pill">Python</div>
+                                    <div class="tech-pill">Raspberry Pi</div>
+                                </div>
+                                <div class="experience-location">📍New York, NY</div>
                             </div>
                         </div>
                         <p>Prototyped a medical device that strobed LEDs at adjustable frequencies, brightnesses, and colors.</p>
